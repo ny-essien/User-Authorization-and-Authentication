@@ -1,0 +1,10 @@
+{% extends 'authorization/main.html' %}
+
+{% block content %}
+
+    {% for user in users %}
+        <h5>{{user.id}} -- @{{user.username}} -- {{user.first_name}} <a href="{% url 'update' user.id %}">Edit</a> <a href="{% url 'delete-user' user.id %}">Delete</a></h5>
+        <hr>
+    {% endfor %}
+
+{% endblock %}

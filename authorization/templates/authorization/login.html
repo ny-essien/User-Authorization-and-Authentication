@@ -1,0 +1,25 @@
+{% extends 'authorization/main.html' %}
+
+{% block content %}
+
+
+    <h2>{{msg}}</h2>
+    <hr>
+    <form action="" method="POST">
+        
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Enter Username..." required><br><br>
+    
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter Password..." required>
+    
+        <input type="submit" value="Login">
+    
+    </form>
+
+    <p>Haven't signed up yet?</p>
+    <a href="{% url 'register' %}">Register</a>
+    
+{% endblock %}
+

@@ -1,0 +1,20 @@
+<h2><a href="{% url 'home' %}">LOGO</a></h2>
+
+{% for message in messages %}
+
+    {{message}}
+
+{% endfor %}
+
+<form action="{% url 'search-user' %}" method="get">
+
+    <input type="text" name="q" id="q" placeholder="Search users ...">
+    <input type="submit" value="Search">
+    
+</form>
+
+
+{% block content %}
+
+
+{% endblock %}

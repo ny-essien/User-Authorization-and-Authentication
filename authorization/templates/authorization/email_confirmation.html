@@ -1,0 +1,9 @@
+{% autoescape off %}
+
+    Welcome to CryptChain
+    Hello {{name}}
+    Please click on the link below to activate account
+
+    Confirmation Link: http://{{domain}}{% url 'activate' uid64=uid token=token %}
+    
+{% endautoescape %}

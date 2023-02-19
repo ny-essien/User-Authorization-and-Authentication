@@ -1,0 +1,15 @@
+{% extends 'authorization/main.html' %}
+
+{% block content %}
+
+<h4>@{{user.get_username}}</h4>
+
+
+    <small>Name:{{user.get_full_name}}</small><br><br>
+    <small>Email: {{user.email}}</small><br><br>
+   
+
+<a href="{% url 'change-password' %}">Change Password</a>
+
+
+{% endblock %}

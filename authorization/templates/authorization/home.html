@@ -1,0 +1,31 @@
+{% extends 'authorization/main.html' %}
+
+{% block content %}
+
+
+    <h2>{{msg}}</h2>
+    {% if request.user.is_authenticated %}
+        <small>Hello {{request.user.username}}</small>
+
+        <a href="{% url 'profile' %}">View Profile</a>
+
+        <a href="{% url 'signout' %}">Logout</a>
+        <br><br>
+        <a href="{% url 'users-list' %}">View Users</a>
+
+    {% else %}
+        <a href="{% url 'signin' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+
+    {% endif %}
+    <hr>
+
+    {% if users %}
+        {% for user in users %}
+            <small>@{{user.get_username}} </small>
+            <h5>{{user.get_full_name}}</h5>
+            <hr>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
